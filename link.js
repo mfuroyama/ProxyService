@@ -47,11 +47,6 @@ class Link extends EventEmitter {
         Object.assign(this, {
             isConnecting: false,
             isConnected: true,
-            key: Buffer.from(JSON.stringify({
-                id: this.id,
-                client: `${this.remoteAddress || 'UNKNOWN'}:${this.remotePort || 0}`,
-                target: `${this.target.remoteAddress || 'UNKNOWN'}:${this.target.remotePort || 0}`,
-            })).toString('base64'),
         });
 
         // Let the Mirror object know that we're connected
