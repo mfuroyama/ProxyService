@@ -52,11 +52,12 @@ class Mirror {
 
     _onDestroy(link, data) {
         const { id } = link;
+        const { source } = data;
 
         link.removeAllListeners();
         delete this.links[id];
 
-        console.log(`${chalk.green(this.name)}: connection closed (${chalk.yellow(link.id)})`);
+        console.log(`${chalk.green(this.name)}: connection closed by ${chalk.green(source)} (${chalk.yellow(link.id)})`);
     }
 
     // eslint-disable-next-line
