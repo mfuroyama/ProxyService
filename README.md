@@ -11,6 +11,7 @@ a bi-directional bridge between the disparate adapters. The idea is:
 
 ## Prerequisites
 * NodeJS (>= 8.0) / NPM
+* Git
 
 ## Configuration
 The **Proxy Service** runtime configuration is contained in the `config.json` file, which should contain an array
@@ -30,6 +31,12 @@ hostname of the original target system with the following name:
 This name is the alias for the main host workstation that the Docker daemon is running on.
 
 ## Installation / Operation
+Clone this repo:
+```
+> git clone https://github.com/hawaiirg/ProxyService
+> cd ProxyService
+```
+
 From the repo directory:
 ```
 > npm install
