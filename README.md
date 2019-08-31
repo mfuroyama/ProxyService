@@ -3,7 +3,7 @@
 ## Background
 If you encounter a situation where you need entities connected on different virtual network adapters (e.g.
 Vagrant VMs and Docker containers) to communicate, you can use the **Proxy Service**. Basically, it does two things:
-* Serves as a bi-directional bridge between the disparate virtual network adapters (using the host the dually connected conduit)
+* Serves as a bi-directional bridge between the disparate virtual network adapters (using the host as a dually-connected conduit)
 * Modifies the JLV SQL Server Database **ENDPOINTS** table to point the VDS to the **Proxy Service**. (The service will also restore the database table back to its original settings on shutdown)
 
 ## Prerequisites
