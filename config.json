@@ -1,11 +1,21 @@
-[{
-    "name": "AINA",
-    "remoteHost": "10.2.100.101",
-    "remotePort": 9210,
-    "localPort": 8880
-}, {
-    "name": "KAI",
-    "remoteHost": "10.2.100.102",
-    "remotePort": 9210,
-    "localPort": 8881
-}]
+{
+    "db": {
+        "username": "jlvuser",
+        "password": "jlvuser1",
+        "hostname": "localhost",
+        "dbname": "JLV"
+    },
+    "sites": [
+        {
+            "name": "AINA",
+            "remoteHost": "10.2.100.101",
+            "remotePort": 9210,
+            "localPort": 8880
+        }, {
+            "name": "KAI",
+            "remoteHost": "10.2.100.102",
+            "remotePort": 9210,
+            "localPort": 8881
+        }
+    ]
+}

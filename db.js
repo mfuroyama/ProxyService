@@ -4,15 +4,8 @@ const sql = require('mssql');
 const chalk = require('chalk');
 
 // =====================================================================================================================
-// These values are hard-coded now for the current JLV Docker/Vagrant dev environment, but they could be made into
-// configuration parameters
-//
-const JLV_DATABASE_PROPERTIES = {
-    username: 'jlvuser',
-    password: 'jlvuser1',
-    hostname: 'localhost',
-    dbname: 'JLV',
-};
+// This value id hard-coded now for the current JLV Docker/Vagrant dev environment, but it could be made into
+// a configuration parameter
 const PROXY_HOSTNAME = 'docker.for.mac.host.internal';
 // =====================================================================================================================
 
@@ -22,7 +15,7 @@ const convertToStringList = (values) => {
 };
 
 
-const modifyEndpoints = async (config) => {
+const modifyEndpoints = async (config, db) => {
     const siteMap = config.reduce((map, site) => {
         const { name, localPort: port, localHost: host = PROXY_HOSTNAME } = site;
         map[name] = { host, port };
@@ -32,7 +25,7 @@ const modifyEndpoints = async (config) => {
     // Connect to the database here
     const {
         username, password, hostname, dbname,
-    } = JLV_DATABASE_PROPERTIES;
+    } = db;
     const connectURL = `mssql://${username}:${password}@${hostname}/${dbname}`;
     await sql.connect(connectURL);
 

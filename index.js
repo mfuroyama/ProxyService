@@ -9,10 +9,12 @@ const { version } = require('./package');
 
 console.log(chalk.green(`==== Proxy Service, v${version} ====\n`));
 
+const { db, sites } = config;
+
 (async () => {
     // ================== Update the JLV SQL Server 'ENDPOINT' table with the correct proxy settings ===================
     console.log(chalk.green(`Modifying JLV ${chalk.white.bold('ENDPOINT')} database table...`));
-    const restoreConfig = await modifyEndpoints(config);
+    const restoreConfig = await modifyEndpoints(sites, db);
 
     let isShuttingDown = false;
     Process.onShutdown(({ type, reason, code }) => {
@@ -27,7 +29,7 @@ console.log(chalk.green(`==== Proxy Service, v${version} ====\n`));
         }
 
         console.log(chalk.green(`\nRestoring JLV ${chalk.white.bold('ENDPOINT')} database table...`));
-        modifyEndpoints(restoreConfig).then((setConfig) => {
+        modifyEndpoints(restoreConfig, db).then((setConfig) => {
             console.log(chalk.green('Restored JLV database!'));
             process.exit(code);
         }).catch((err) => {
@@ -37,7 +39,7 @@ console.log(chalk.green(`==== Proxy Service, v${version} ====\n`));
     });
 
     // ============================== Start the proxy services for each configured system ==============================
-    config.forEach((options) => {
+    sites.forEach((options) => {
         const { name } = options;
 
         console.log(`${chalk.green(name)}: Creating proxy interface...`);
