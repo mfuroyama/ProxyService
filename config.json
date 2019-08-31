@@ -1,10 +1,10 @@
 [{
-    "name": "VISTA AINA",
+    "name": "AINA",
     "remoteHost": "10.2.100.101",
     "remotePort": 9210,
     "localPort": 8880
 }, {
-    "name": "VISTA KAI",
+    "name": "KAI",
     "remoteHost": "10.2.100.102",
     "remotePort": 9210,
     "localPort": 8881
