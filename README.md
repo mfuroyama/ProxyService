@@ -24,11 +24,14 @@ Clone this repo:
 > cd ProxyService
 ```
 
-From the repo directory:
+To start the **Proxy Service**, from the repo directory:
 ```
 > npm install
 > npm start
 ```
+
+To stop the application, just use <kbd>Control</kbd> + <kbd>C</kbd>. There is a shutdown signal handler registered
+on the application which will run the database restore command before closing.
 
 ## Configuration
 The **Proxy Service** runtime configuration is contained in the `config.json` file, which should contain the following structure:
