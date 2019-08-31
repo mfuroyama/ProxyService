@@ -17,6 +17,19 @@ Vagrant VMs and Docker containers) to communicate, you can use the **Proxy Servi
 * JLV VISTA instances (AINA, KAI) running in Vagrant VMs
     - VMs accessible from host via Vagrant network IP addresses (e.g `10.2.100.101` etc.)
 
+## Installation / Operation
+Clone this repo:
+```
+> git clone https://github.com/hawaiirg/ProxyService
+> cd ProxyService
+```
+
+From the repo directory:
+```
+> npm install
+> npm start
+```
+
 ## Configuration
 The **Proxy Service** runtime configuration is contained in the `config.json` file, which should contain an array
 of JS Objects:
@@ -33,16 +46,3 @@ of JS Objects:
 | sites.remoteHost | String | Host name / IP address of the target system |
 | sites.remotePort | Number/String | TCP port of the target system |
 | sites.localPort | Number/String | TCP port of the proxied interface to the target system. |
-
-## Installation / Operation
-Clone this repo:
-```
-> git clone https://github.com/hawaiirg/ProxyService
-> cd ProxyService
-```
-
-From the repo directory:
-```
-> npm install
-> npm start
-```
