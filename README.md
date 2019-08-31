@@ -31,8 +31,7 @@ From the repo directory:
 ```
 
 ## Configuration
-The **Proxy Service** runtime configuration is contained in the `config.json` file, which should contain an array
-of JS Objects:
+The **Proxy Service** runtime configuration is contained in the `config.json` file, which should contain the following structure:
 
 | Field Name | Type | Description |
 |---|---|---|
